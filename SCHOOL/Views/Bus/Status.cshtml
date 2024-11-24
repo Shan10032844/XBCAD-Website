@@ -1,0 +1,23 @@
+﻿@model List<SCHOOL.Models.Bus>
+
+<h1 style="color: #ffc107; text-align: center; margin-bottom: 20px;">Bus Status</h1>
+
+<table class="table" style="width: 100%; border-collapse: collapse; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <thead style="background-color: #ffc107; color: #000;">
+        <tr>
+            <th style="padding: 12px; text-align: left;">Bus Number</th>
+            <th style="padding: 12px; text-align: left;">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bus in Model)
+        {
+            <tr style="background-color: #fff; border-bottom: 1px solid #ddd;">
+                <td style="padding: 12px;">@bus.BusNumber</td>
+                <td style="padding: 12px; color: @(bus.Status == "On Time" ? "green" : "red"); font-weight: bold;">
+                    @bus.Status
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

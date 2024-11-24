@@ -1,0 +1,44 @@
+﻿@model List<SCHOOL.Models.VolunteerOpportunity>
+
+<h1 style="color: #ffc107; text-align: center; margin-bottom: 30px;">Volunteer Opportunities</h1>
+
+<!-- Volunteer Event Form -->
+<div style="margin-bottom: 30px; text-align: center;">
+    <h2 style="color: #007bff;">Upload New Volunteer Event</h2>
+    <form method="post" asp-action="Create" asp-controller="Volunteer" style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 50%; margin: 0 auto;">
+        <div style="margin-bottom: 20px;">
+            <label for="EventName" style="color: #333; font-weight: bold;">Event Name:</label>
+            <input type="text" id="EventName" name="EventName" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #ddd;" required />
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label for="Duration" style="color: #333; font-weight: bold;">Duration:</label>
+            <input type="text" id="Duration" name="Duration" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #ddd;" required />
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label for="EventDate" style="color: #333; font-weight: bold;">Date:</label>
+            <input type="date" id="EventDate" name="EventDate" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #ddd;" required />
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label for="Description" style="color: #333; font-weight: bold;">Description:</label>
+            <textarea id="Description" name="Description" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #ddd;" required></textarea>
+        </div>
+
+        <button type="submit" style="background-color: #ffc107; color: #000; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">Submit Event</button>
+    </form>
+</div>
+
+<!-- Existing List of Volunteer Opportunities -->
+<h2 style="color: #ffc107; text-align: center; margin-bottom: 20px;">Available Opportunities</h2>
+<ul style="list-style-type: none; padding: 0;">
+    @foreach (var opportunity in Model)
+    {
+        <li style="background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <h3 style="color: #007bff; margin-bottom: 10px;">@opportunity.Title</h3>
+            <p style="font-size: 16px; line-height: 1.5; margin-bottom: 10px;">@opportunity.Description</p>
+            <p style="font-weight: bold; color: #333;">Contact: <span style="color: #007bff;">@opportunity.ContactInfo</span></p>
+        </li>
+    }
+</ul>

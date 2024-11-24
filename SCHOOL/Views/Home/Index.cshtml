@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<h1 style="color: #ffc107; text-align: center; margin-bottom: 30px;">Welcome to SchoolSync</h1>
+<p style="text-align: center; font-size: 18px; margin-bottom: 40px;">
+    Easily track buses, support events, and engage with the community!
+</p>
+
+<div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+
+    <!-- Bus Schedule Button -->
+    <a asp-controller="Bus" asp-action="Schedule"
+       style="text-decoration: none; display: inline-block; width: 250px; height: 150px; background-color: #ffc107;
+              border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center; padding: 20px; color: #000; font-weight: bold;">
+        <h3>Bus Schedule</h3>
+        <p style="font-size: 14px; margin-top: 10px;">View and track school bus schedules in real time.</p>
+    </a>
+
+
+    <!-- Volunteer Opportunities Button -->
+    <a asp-controller="Volunteer" asp-action="Opportunities"
+       style="text-decoration: none; display: inline-block; width: 250px; height: 150px; background-color: #ffc107;
+              border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center; padding: 20px; color: #000; font-weight: bold;">
+        <h3>Volunteer Opportunities</h3>
+        <p style="font-size: 14px; margin-top: 10px;">Sign up to help with school events and activities.</p>
+    </a>
+
+</div>
